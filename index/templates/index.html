@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment Writer</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script
+  		src="https://code.jquery.com/jquery-3.5.0.min.js"
+  		integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+  		crossorigin="anonymous">
+	</script>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<script>
+		function hexToBase64(str) {
+    return btoa(String.fromCharCode.apply(null, str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
+}
+
+		function getimage()
+		{
+			$text = document.getElementById("text").value;
+			$fontwidth = document.getElementById("font-width").value;
+			$fontheight = document.getElementById("font-height").value;
+			$tableft = document.getElementById("tab-left").value;
+			$tabright = document.getElementById("tab-right").value;
+			$fontsize = document.getElementById("font-size").value;
+			$fontcolor = document.getElementById("font-color").value;
+			$.get('/write/',
+				{
+				string:$text,
+				fontwidth: $fontwidth,
+				fontheight: $fontheight,
+				tableft: $tableft,
+				tabright:$tabright,
+				fontsize:$fontsize,
+				fontcolor:$fontcolor
+				},
+				function(data)
+				{
+					console.log(data);
+var img = document.getElementById("op");
+img.src = 'data:image/jpeg;base64,' + data;
+				}
+			);
+		}
+	</script>
+</head>
+<body>
+	<div class="inputs">
+		<form>
+			<label>Enter the Text Below</label><br>
+			<textarea name="text" id = "text" class="textarea" rows="25" cols="50" onkeyup="getimage();"></textarea><br>
+			<label>X-spacing   </label><br><input type="range" onchange="getimage();" id="font-width" min="10" max="80" step="2" class="ranges" value="36"><br>
+			<label>Y-spacing  </label><br><input type="range" onchange="getimage();" id="font-height" min="10" max="80" step="2" class="ranges" value="36"><br>
+			<label>Left Margin</label><br><input type="range" onchange="getimage();" id="tab-left" min="0" max="50" step="2" class="ranges" value="15"><br>
+			<label>Right Margin</label><br><input type="range" onchange="getimage();" id="tab-right" min="0" max="50" step="2" class="ranges" value="15"><br>
+			<label>Font Color&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="color" onchange="getimage();" id="font-color" value="#0d0035">
+			<label>&nbsp;&nbsp;&nbsp;&nbsp;Font Size&nbsp;&nbsp;&nbsp;&nbsp;</label>
+			<select id="font-size" id="font-size" onchange="getimage();" >
+			  <option value="28 26">10</option>
+			  <option value="28 28">11</option>
+			  <option value="30 30">12</option>
+			  <option value="32 30">13</option>
+			  <option value="32 32">14</option>
+			  <option value="34 34" selected>15</option>
+			  <option value="36 36">16</option>
+			  <option value="38 36">17</option>
+			  <option value="40 40">18</option>
+			  
+			</select>
+
+			<br>
+<!--			<input type="submit" name="submit" value="Generate">-->
+
+
+		</form>
+	
+	</div>
+	<div class="output" id="output">
+		<label>Output</label><br>
+		<img id = "op" src="{% static 'image.jpg' %}" />
+	</div>
+
+<div class="note">
+	<p>&nbsp;&nbsp;This version currently supports only 64 characters. I will add more characters and backgrounds soon...</p>
+	</divclass>
+
+
+
+
+</body>
+
+
+</html>

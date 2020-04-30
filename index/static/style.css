@@ -1,0 +1,72 @@
+body {
+	background-color: lightblue;
+	background-image: url("blue-BG.jpg");
+	font-family: montserrat;
+	font-size: 15px;
+}
+
+.inputs{
+	float: left;
+	padding: 10px;
+}
+.output{
+	padding: 10px;
+	float:left;
+	margin-left:10px;
+}
+input[type="range"] {
+		width: 320px;
+		background-color: #9a905d;
+		cursor: ew-resize;
+}
+label{
+	font-weight: bold;
+}
+textarea{
+	font-family: montserrat;
+}
+select{
+	color: blue;
+	background-color: white;
+	height: 23px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 320px;
+      -webkit-appearance: none;
+      background-color: #fff;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 10px;
+      -webkit-appearance: none;
+      color: #fff;
+      margin-top: -1px;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 10px;
+      -webkit-appearance: none;
+      height: 10px;
+      cursor: ew-resize;
+      background: #a0a0ff;
+      box-shadow: -320px 0 0 320px #555;
+    }
+
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+  background-color: #fff; 
+}
+input[type="range"]::-moz-range-track {  
+  background-color: #fff;
+}
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+  background-color: #fff; 
+}
+input[type="range"]::-ms-fill-upper {  
+  background-color: #fff;
+}
