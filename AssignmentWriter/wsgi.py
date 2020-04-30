@@ -1,5 +1,5 @@
 """
-WSGI config for AssignmentWriter project.
+WSGI config for steganography_social_media project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -8,11 +8,12 @@ https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 """
 
 import os
-
 from django.core.wsgi import get_wsgi_application
+from whitenoise import WhiteNoise
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AssignmentWriter.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "AssignmentWriter.settings")
 
 application = get_wsgi_application()
-from whitenoise.django import DjangoWhiteNoise
-application = DjangoWhiteNoise(application)
+application = WhiteNoise(application)
+
+
