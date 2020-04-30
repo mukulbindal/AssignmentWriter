@@ -5,7 +5,6 @@
 	<title>Assignment Writer</title>
 
 	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-	<link rel="stylesheet" type="text/css" href="style.css">
 	<script
   		src="https://code.jquery.com/jquery-3.5.0.min.js"
   		integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
@@ -38,7 +37,6 @@
 				},
 				function(data)
 				{
-					console.log(data);
 var img = document.getElementById("op");
 img.src = 'data:image/jpeg;base64,' + data;
 				}

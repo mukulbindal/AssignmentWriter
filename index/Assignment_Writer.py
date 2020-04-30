@@ -30,7 +30,6 @@ class Assignment_Writer:
         font_size = 'files/'+str(self.FONT_SIZE[0]) + 'x' + str(self.FONT_SIZE[1])
         fp = open(font_size + ".pickle", "rb")
         self.words = pickle.load(fp)
-        print(page.shape)
 
     def write_char(self, start_i, start_j, character):
         for i in range(character.shape[0]):
@@ -77,7 +76,6 @@ class Assignment_Writer:
                 start_j = self.tab_left
                 start_i += self.FONT_SIZE_HEIGHT
             if start_i > N:
-                print("exeeded")
                 break
 
     def generate(self):
