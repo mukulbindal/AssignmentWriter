@@ -121,3 +121,23 @@ input[type="range"]::-ms-fill-upper {
     padding: 10px;
 
 }
+.footerv2{
+margin-top:10px;
+background-color:#444;
+    color:white;
+    font-weight:bold;
+    margin-botton:0px;
+    border:1px solid blue;
+    border-radius:15px;
+    bottom:0px;
+    left:0px;
+    width:100%;
+}
+.footer p{
+    color:#444;
+}
+.footerv2 *{
+    color:white;
+    margin-left: 10px;
+    margin-top:10px;
+}
