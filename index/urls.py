@@ -4,5 +4,3 @@ urlpatterns = [
     url(r'^$', views.index, name="dashboard"),
     url(r'^write', views.write, name="write")
 ]
-
-

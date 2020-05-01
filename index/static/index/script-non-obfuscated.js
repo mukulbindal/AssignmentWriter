@@ -1,6 +1,6 @@
 function getimage(event)
 		{
-			if(!(event==null || event.keyCode==32 || event.keyCode==13 || event.keyCode==190))return;
+			if(!(event==null || event.keyCode==13 || event.keyCode==190))return;
 			$text = document.getElementById("text").value;
 			$fontwidth = document.getElementById("font-width").value;
 			$fontheight = document.getElementById("font-height").value;
