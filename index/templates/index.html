@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>Assignment Writer</title>
-
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="{% static 'index/style.css' %}">
 	<script
   		src="https://code.jquery.com/jquery-3.5.0.min.js"
@@ -11,44 +11,17 @@
   		crossorigin="anonymous">
 	</script>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-	<script>
-		function hexToBase64(str) {
-    return btoa(String.fromCharCode.apply(null, str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
-}
-
-		function getimage()
-		{
-			$text = document.getElementById("text").value;
-			$fontwidth = document.getElementById("font-width").value;
-			$fontheight = document.getElementById("font-height").value;
-			$tableft = document.getElementById("tab-left").value;
-			$tabright = document.getElementById("tab-right").value;
-			$fontsize = document.getElementById("font-size").value;
-			$fontcolor = document.getElementById("font-color").value;
-			$.get('/write/',
-				{
-				string:$text,
-				fontwidth: $fontwidth,
-				fontheight: $fontheight,
-				tableft: $tableft,
-				tabright:$tabright,
-				fontsize:$fontsize,
-				fontcolor:$fontcolor
-				},
-				function(data)
-				{
-var img = document.getElementById("op");
-img.src = 'data:image/jpeg;base64,' + data;
-				}
-			);
-		}
-	</script>
+	<script src="{% static 'index/script.js' %}"></script>
 </head>
 <body>
+<div class="header">
+	<h1>Assignment Writer</h1>
+	<h4> Press space or enter to render the text.</h4>
+</div><br><br><br><br>
 	<div class="inputs">
 		<form>
 			<label>Enter the Text Below</label><br>
-			<textarea name="text" id = "text" class="textarea" rows="25" cols="50" onkeyup="getimage();"></textarea><br>
+			<textarea name="text" id = "text" class="textarea" rows="25" cols="50" onkeyup="getimage(event);"></textarea><br>
 			<label>X-spacing   </label><br><input type="range" onchange="getimage();" id="font-width" min="10" max="80" step="2" class="ranges" value="36"><br>
 			<label>Y-spacing  </label><br><input type="range" onchange="getimage();" id="font-height" min="10" max="80" step="2" class="ranges" value="36"><br>
 			<label>Left Margin</label><br><input type="range" onchange="getimage();" id="tab-left" min="0" max="50" step="2" class="ranges" value="15"><br>
@@ -80,9 +53,16 @@ img.src = 'data:image/jpeg;base64,' + data;
 		<img id = "op" src="{% static 'index/image.jpg' %}" />
 	</div>
 
-<div class="note">
-	<p>&nbsp;&nbsp;This version currently supports only 64 characters. I will add more characters and backgrounds soon...</p>
-	</divclass>
+
+
+<div class="footer">
+	<div class="footnote">
+	<p class="p">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This version currently supports only 64 characters. I will add more characters and backgrounds soon...<br>
+	<i class="fa fa-github" aria-hidden="true"></i> <a href="https://github.com/mukulbindal/AssignmentWriter">https://github.com/mukulbindal/AssignmentWriter</a> &nbsp;&nbsp;&nbsp;&nbsp;
+	For collaborations contact via<a href="malito:bindalmukul99@gmail.com">bindalmukul99@gmail.com</a></p>
+	</div>
+</div>
+
 
 
 

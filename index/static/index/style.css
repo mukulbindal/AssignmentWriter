@@ -1,36 +1,70 @@
 body {
-	background-color: lightblue;
-	background-image: url("blue-BG.jpg");
+	background-color: #555;
+	//background-image: url("blue-BG.jpg");
 	font-family: montserrat;
 	font-size: 15px;
+	color:white;
 }
+.header{
+    margin-top: 0px;
+    background-color:#666   ;
+    width:98%;
+    border: 2px solid black;
+    border-radius: 20px;
+    position:absolute;
 
+}
+.header *{
+    float:left;
+    margin-top:0px;
+    padding-top:10px;
+    padding-left:10px;
+}
+.header h4{
+    margin-top:10px;
+    margin-left:25px;
+}
 .inputs{
 	float: left;
 	padding: 10px;
+
 }
 .output{
 	padding: 10px;
 	float:left;
 	margin-left:10px;
+
 }
 input[type="range"] {
 		width: 320px;
 		background-color: #9a905d;
 		cursor: ew-resize;
 }
+
 label{
+ margin-top:10px;
 	font-weight: bold;
+	//position:absolute;
+	background-color:#666;
+	border: 1px solid black;
+	border-radius:8px;
+	padding:2px;
 }
 textarea{
 	font-family: montserrat;
+	margin-top:7px;
+}
+img{
+    margin-top:7px;
 }
 select{
 	color: blue;
 	background-color: white;
 	height: 23px;
 }
-
+input{
+    margin-top:10px;
+}
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type='range'] {
       overflow: hidden;
@@ -69,4 +103,21 @@ input[type="range"]::-ms-fill-lower {
 }
 input[type="range"]::-ms-fill-upper {  
   background-color: #fff;
+}
+.footer{
+    background-color:#444;
+    color:white;
+    font-weight:bold;
+    margin-botton:0px;
+    border:1px solid green;
+    border-radius:15px;
+    bottom:0px;
+    left:0px;
+    width:100%;
+
+}
+.footer *{
+    color:white;
+    padding: 10px;
+
 }
